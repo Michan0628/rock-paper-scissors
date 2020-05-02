@@ -1,0 +1,1 @@
+This is an assignment called 'rock, paper, scissors' for odin project.
