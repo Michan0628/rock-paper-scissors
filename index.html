@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    choices = ['rock', 'paper','scissors'];    
+    function random(array){
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function computerPlay(){
+        return random(choices);
+    }
+
+    function playRound(playerSelection, computerSelection){
+        //case insensitive
+
+        playerSelection = playerSelection.toLowerCase();
+
+        //game rules
+
+        if (playerSelection === 'rock'){
+            if (computerSelection === 'rock'){
+                return "It's a tie, please play again.";
+            }else if(computerSelection ==='scissors'){
+                return 'You Win!';
+            }else{
+                return 'You lose!';
+            }
+        }else if(playerSelection === 'scissors'){
+            if (computerSelection === 'rock'){
+                return "You lose!";
+            }else if(computerSelection ==='scissors'){
+                return "It's a tie, please play again.";
+            }else{
+                return 'You Win!';
+            }
+        }else{
+            if (computerSelection === 'rock'){
+                return "You Win!";
+            }else if(computerSelection ==='paper'){
+                return "It's a tie, please play again.";
+            }else{
+                return 'You Win!';
+            }
+            
+        }
+    }
+
+    function game(){
+
+        for(let i = 0; i < 5; i++){
+        let player = prompt('what do you choose');
+        let computer = computerPlay();
+        let result = playRound(player, computer);
+        console.log(result)
+        }
+
+    }
+
+
+    </script>
+</body>
+</html>
